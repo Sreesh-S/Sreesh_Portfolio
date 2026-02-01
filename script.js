@@ -177,4 +177,31 @@ sections.forEach(sec => {
     sec.style.transform = 'translateY(50px)';
     sec.style.transition = 'all 0.8s ease-out';
     observer.observe(sec);
+    observer.observe(sec);
+});
+
+// --- Contact Form Handling ---
+const contactForm = document.getElementById('contactForm');
+const thankYouPopup = document.getElementById('thankYouPopup');
+const closePopupBtn = document.getElementById('closePopup');
+
+// Show popup on submit (using the iframe hack, we treat submit as success)
+contactForm.addEventListener('submit', () => {
+    // Wait a brief moment to ensure the form post starts, then show popup
+    setTimeout(() => {
+        thankYouPopup.classList.add('active');
+        contactForm.reset();
+    }, 500);
+});
+
+// Close popup
+closePopupBtn.addEventListener('click', () => {
+    thankYouPopup.classList.remove('active');
+});
+
+// Close when clicking outside
+thankYouPopup.addEventListener('click', (e) => {
+    if (e.target === thankYouPopup) {
+        thankYouPopup.classList.remove('active');
+    }
 });

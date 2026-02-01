@@ -309,14 +309,27 @@
                             class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
-            <form class="contact-form glass-card">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message" required></textarea>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            <form class="contact-form glass-card"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf1AWkP5-r3bPdhZ4wJ1Yq0126AJPLDhbFlPeffILclc8Q7ZA/formResponse"
+                method="POST" target="hidden_iframe" id="contactForm">
+                <input type="text" name="entry.73880251" placeholder="Your Name" required>
+                <input type="email" name="entry.844249775" placeholder="Your Email" required>
+                <textarea name="entry.1280842736" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </div>
     </section>
+
+    <!-- Thank You Popup -->
+    <div id="thankYouPopup" class="popup-overlay">
+        <div class="popup-content glass-card">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully.I'll get back to you soon</p>
+            <button id="closePopup" class="btn btn-primary">Close</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
